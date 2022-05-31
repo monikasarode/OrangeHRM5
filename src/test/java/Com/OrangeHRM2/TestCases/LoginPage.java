@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginPage {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "D:\\software\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://opensource-demo.orangehrmlive.com/");
@@ -16,14 +16,17 @@ public class LoginPage {
 		WebElement txtusername=driver.findElement(By.id("txtUsername"));
 		txtusername.sendKeys("Admin");
 		System.out.println("Enter UserName");  
+		Thread.sleep(2000);
 		
 		WebElement txtpassword=driver.findElement(By.id("txtPassword"));
 		txtpassword.sendKeys("admin123");
 		System.out.println("Enter Password");
+		Thread.sleep(2000);
 		
 		WebElement btnLogin=driver.findElement(By.id("btnLogin"));
 		btnLogin.click();
 		System.out.println("Click On Login Button");
+		Thread.sleep(2000);
 		
 		WebElement btnmyinfo=driver.findElement(By.id("menu_pim_viewMyDetails"));
 		btnmyinfo.click();
